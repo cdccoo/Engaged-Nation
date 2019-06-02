@@ -1,0 +1,47 @@
+1. How can you switch a css style when the screen size is below a certain size?
+Using @media Rule
+e.g
+@media screen and (max-width: 479px) {
+  /* Styles here will be used when the screen size is anything between 0 - 478px */
+}
+
+2. What is the benefit of using stylesheets instead of inline styles?
+Easier to maintain especially for larger sites since an update reflects to all other pages. Performs well especially when the file has been cached for reusability.
+
+3. Is there a way to manage CSS with variables and functions?
+Yes, you can use parameters in the html attribute to manipulate the css of a page element with the specified custom variables and functions.
+
+4. Review and update the following erroneous CSS:
+.button, input[type="submit"], button {
+position: relative
+display: inline-block;
+padding-front: 0;
+margin: 0;
+border: none;
+text-decoration: none;
+text-align: center;
+white-space: nowrap;
+overflow: visible;
+bgcolor: red;
+text-transform: uppercase
+font-color: #fZb034;
+font-size: 18px;
+font-family: 'FuturaBT-Book';
+line-height. 20px;
+height: 20px;
+-webkit-transition: color 0.2s ease-in-out;
+transition: color 0.2s ease-in-out
+}
+
+/* Answer */
+input[type="submit"], button {
+  border: none;
+  background-color: red;
+  text-transform: uppercase;
+  font-size: 18px;
+  font-family: 'FuturaBT-Book';
+  line-height: 20px;
+  height: 20px;
+  -webkit-transition: color 0.2s, ease-in-out 0.2s;
+  transition: color 0.2s, ease-in-out 0.2s;
+}
