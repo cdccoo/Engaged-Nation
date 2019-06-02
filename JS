@@ -1,17 +1,56 @@
 JavaScript
 1. What’s the difference between the following three “car” approaches?
 function Car(){}
+This is a function named Car that when invoked, can produce different results and this can also be reused multiple times.
+
 var car = Car();
+This is a variable car that has been assigned the value/s that is returned by the function CAR(). This car variable can also be reassigned with new values.
+
 var car = new Car();
+This variable can be used to create a new Object. This car variable can also be reassigned with new values that can be returned whenever variable car is used.
+
 2. Explain what AJAX is and it’s advantages/disadvantages.
+Creates asynchronous web app on the clientside.
+Advantages
+Since it uses client side scripting, it reduces network calls to the server thus optimizing user experience with the site.
+Disadvantages
+Not 100% supported by all browsers.
+Not secured.
+
 3. Describe how event bubbling works in the context of clicking on the “Hello World” text:
 <body>
 <div id=”container”>
 <span id=”textContainer”>Hello World</span>
 </div>
 </body>
+If Hello World text is clicked, all events associated with the text will propagrate to the parent. Hierarchy from the inside(child) to the parent it will propagate is: SPAN, DIV, BODY, HTML, DOCUMENT, WINDOW
+
 4. Create a loop that iterates up to 100 while outputting "fizz" at multiples of 3, "buzz" at
 multiples of 5 and "fizzbuzz" at multiples of 3 and 5.
+
+<!DOCTYPE html>
+<html>
+<body>
+<script>
+var text = "";
+for (var i = 1; i <= 100; i++) {
+  document.write(i);
+  if( i % 3 == 0 && i % 5 == 0 ) {
+        document.write(" fizzbuzz");
+    } else {
+        if( i % 3 == 0 ) {
+            document.write(" fizz");
+        }
+        if( i % 5 == 0 ) {
+            document.write(" buzz");
+        }
+    }
+    document.write('<br>');
+}
+</script>
+</body>
+</html>
+
 5. Please fix the following erroneous JavaScript code.
 /**
 * Returns the header element.
