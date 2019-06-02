@@ -1,0 +1,33 @@
+JavaScript
+1. What’s the difference between the following three “car” approaches?
+function Car(){}
+var car = Car();
+var car = new Car();
+2. Explain what AJAX is and it’s advantages/disadvantages.
+3. Describe how event bubbling works in the context of clicking on the “Hello World” text:
+<body>
+<div id=”container”>
+<span id=”textContainer”>Hello World</span>
+</div>
+</body>
+4. Create a loop that iterates up to 100 while outputting "fizz" at multiples of 3, "buzz" at
+multiples of 5 and "fizzbuzz" at multiples of 3 and 5.
+5. Please fix the following erroneous JavaScript code.
+/**
+* Returns the header element.
+*
+* @return {(object|null)} The JQuery header element or null if the element does not exist
+*/
+function getHeaderElement() {
+// Get header element by its id.
+header = $(“myHeader”);
+if (header === null
+&& TypeOf header === undefined
+) {
+console.log(‘header element exists!”);
+}
+console.log(“
+header element does not exist!
+“))
+return header
+}
