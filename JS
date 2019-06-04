@@ -55,18 +55,31 @@ for (var i = 1; i <= 100; i++) {
 /**
 * Returns the header element.
 *
-* @return {(object|null)} The JQuery header element or null if the element does not exist
-*/
+* @return {(object|null)} The JQuery header element or null if the element does not exist */
 function getHeaderElement() {
-// Get header element by its id.
-header = $(“myHeader”);
+// Get header element by its id. header = $(“myHeader”);
 if (header === null
 && TypeOf header === undefined
-) {
+){
 console.log(‘header element exists!”);
 }
 console.log(“
 header element does not exist!
 “))
-return header
+return header }
+
+Answer
+/**
+* Returns the header element.
+*
+* @return {(object|null)} The JQuery header element or null if the element does not exist */
+function getHeaderElement() {
+  // Get header element by its id. header = $(“myHeader”);
+  if (header != null || header != undefined){
+    console.log("header element exist!”);
+  }
+  else {
+    console.log(“header element does not exist!“);
+  }
+  return header;
 }
