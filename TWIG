@@ -31,32 +31,52 @@ Login Form:
     <input type="username" value="{{ last_username }}" name="username" id="inputUsername" class="form-control" placeholder="Username" required autofocus>
     <label for="inputPassword" class="sr-only">Password</label>
     <input type="password" name="password" id="inputPassword" class="form-control" placeholder="Password" required>
-    <button class="submitButtonHTML" type="submit">Sign in</button>
+    <input class="submitButtonHTML" type="submit" value="Log In">
 </form>
-<div class="totalSiteLogins" data-total=0></div>
+<div class="totalSiteLogins" data-total=22>22/div>
 {% endblock %}
 
 Script:
+//Onload of form, a script willl run to retrieve the current totalSiteLogins
+
+//Read from database and put the data into this variable
+    var totalLogins = new databaseTotalLogins();
+    
+//By using a method, retrieved the value.   
+    val currentValue = totalLogins.retrievedValue();
+
+//Parse the value into int for display purpose only
+    var intValue = parseInt(currentValue, 10);
+    
+//append in the dom by attributes
+    attribute["total"] = intValue;
+    
 //When a user clicks the submit button, a script will run.
 
 Credential returnedCredential = checkValidity(username, password, isAdminLogin);
 if(returnedCredential.login == true) {
-    var userType = "USER";
-
     //Read from database and put the data into this variable
     var totalLogins = new databaseTotalLogins();
+    
     //By using a method, retrieved the value.   
     val currentValue = totalLogins.retrievedValue();
+    
     //increase the retrieved value by 1.
     val newValue = currentValue + 1;
+    
     //By using a function save the new value back to the database
     saveNewTotal(newValue);
+    
     //Parse the value into int for display purpose only
     var intValue = parseInt(newValue, 10);
+    
+    var userType = "USER";
+    
     //if true, overwrite value of userType
     if(returnedCredential.isAdminLogin == true) {
         userType = "ADMIN"
     }
+    
     //append in the dom by attributes
     attribute["text"] = userType;
     attribute["total"] = intValue;
